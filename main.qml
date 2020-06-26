@@ -8,7 +8,7 @@ import ToDoModel 1.0
 Window {
 
     visible: true
-    width: 1700
+    width: 1695
     height: 900
     maximumHeight: height
     maximumWidth: width
@@ -25,36 +25,43 @@ Window {
     ToDoModel
     {
         id: toDoModelMonday
+        jSonFileName: "./jsonFileMonday"
     }
 
     ToDoModel
     {
         id: toDoModelTuesday
+        jSonFileName: "./jsonFileTuesday"
     }
 
     ToDoModel
     {
         id: toDoModelWednesday
+        jSonFileName: "./jsonFileWednesday"
     }
 
     ToDoModel
     {
         id: toDoModelThursday
+        jSonFileName: "./jsonFileThursday"
     }
 
     ToDoModel
     {
         id: toDoModelFriday
+        jSonFileName: "./jsonFileFriday"
     }
 
     ToDoModel
     {
         id: toDoModelSaturday
+        jSonFileName: "./jsonFileSaturday"
     }
 
     ToDoModel
     {
         id: toDoModelSunday
+        jSonFileName: "./jsonFileSunday"
     }
 
     Rectangle {
@@ -94,6 +101,7 @@ Window {
                 textButton: (language === 0) ? ("Добавить задачу") : ("Add Task")
                 toDoModel: toDoModelMonday
                 dayNumber: 0
+                backgoundColor: "#FFFFFF"
             }
 
             DayOfWeek {
@@ -102,6 +110,7 @@ Window {
                 textButton: (language === 0) ? ("Добавить задачу") : ("Add Task")
                 toDoModel: toDoModelTuesday
                 dayNumber: 1
+                backgoundColor: "#FFFFFF"
             }
 
             DayOfWeek {
@@ -110,6 +119,7 @@ Window {
                 textButton: (language === 0) ? ("Добавить задачу") : ("Add Task")
                 toDoModel: toDoModelWednesday
                 dayNumber: 2
+                backgoundColor: "#FFFFFF"
             }
 
             DayOfWeek {
@@ -118,6 +128,7 @@ Window {
                 textButton: (language === 0) ? ("Добавить задачу") : ("Add Task")
                 toDoModel: toDoModelThursday
                 dayNumber: 3
+                backgoundColor: "#FFFFFF"
             }
 
             DayOfWeek {
@@ -126,6 +137,7 @@ Window {
                 textButton: (language === 0) ? ("Добавить задачу") : ("Add Task")
                 toDoModel: toDoModelFriday
                 dayNumber: 4
+                backgoundColor: "#FFFFFF"
             }
 
             DayOfWeek {
@@ -134,6 +146,7 @@ Window {
                 textButton: (language === 0) ? ("Добавить задачу") : ("Add Task")
                 toDoModel: toDoModelSaturday
                 dayNumber: 5
+                backgoundColor: "#EEFFEE"
             }
 
             DayOfWeek {
@@ -142,6 +155,7 @@ Window {
                 textButton: (language === 0) ? ("Добавить задачу") : ("Add Task")
                 toDoModel: toDoModelSunday
                 dayNumber: 6
+                backgoundColor: "#EEFFEE"
             }
         }
     }
@@ -200,6 +214,7 @@ Window {
                 anchors.topMargin: 20
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: 15
+                maximumLength: 18
             }
 
             Button {

@@ -16,7 +16,10 @@ Rectangle {
     property string titleText
     property string textButton
     property ToDoModel toDoModel
+    property color backgoundColor
     property int dayNumber
+
+    color: backgoundColor
 
     Text {
         id: title
@@ -51,6 +54,8 @@ Rectangle {
                 anchors.left: parent.left
                 anchors.leftMargin: 5
                 checked: isChecked
+                onCheckedChanged:
+                    toDoModel.setIsChecked(model.index)
             }
 
             Text {
@@ -58,7 +63,7 @@ Rectangle {
                 anchors.leftMargin: 5 + 5 + checkBox.width
                 anchors.verticalCenter: parent.verticalCenter
                 text: description
-                font.pixelSize: 15
+                font.pixelSize: 13
             }
 
             Rectangle {

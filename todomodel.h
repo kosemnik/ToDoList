@@ -3,6 +3,8 @@
 
 #include <QAbstractListModel>
 #include "task.h"
+#include <QJsonObject>
+#include <QString>
 
 class ToDoModel : public QAbstractListModel
 {
@@ -16,6 +18,9 @@ public:
         IsCheckedRole
     };
 
+    Q_PROPERTY(QString jSonFileName READ jSonFileName WRITE setJSonFileName)
+    QString jSonFileName() const;
+    void setJSonFileName(QString jSonFileName);
 
     // Basic functionality:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
@@ -29,13 +34,20 @@ public:
     Qt::ItemFlags flags(const QModelIndex& index) const override;
 
     Q_INVOKABLE void addTask(QString description, bool isChecked);
+    void addTaskToModel(QString description, bool isChecked);
     Q_INVOKABLE void removeTask(int index);
     Q_INVOKABLE void removeTasks();
+    Q_INVOKABLE void updateFile();
+    void fillModel();
+
+    Q_INVOKABLE void setIsChecked(int index);
 
     virtual QHash<int, QByteArray> roleNames() const override;
 
 private:
     QList<Task> tasks;
+    QString _jSonFileName;
+    QJsonObject _currentJsonObject;
 };
 
 #endif // TODOMODEL_H
