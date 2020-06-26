@@ -6,7 +6,6 @@ import QtQuick.Dialogs 1.2
 import ToDoModel 1.0
 
 Window {
-
     visible: true
     width: 1695
     height: 900
